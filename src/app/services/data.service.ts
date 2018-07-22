@@ -36,6 +36,11 @@ export class DataService {
 	// 	return this.data;
 	// }
 
+	getUser(id) {
+		return this.http.get('http://jsonplaceholder.typicode.com/users/' + id)
+					.pipe(map(res => res.json()));
+	}
+
 	getUserList() {
 		return this.http.get('http://jsonplaceholder.typicode.com/users')
 					.pipe(map(res => res.json()));

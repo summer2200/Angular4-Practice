@@ -31,6 +31,7 @@
       </ul>
       <button class="btn btn-danger" (click)="deleteUser(user.id, i)">Delete</button>
       <button class="btn btn-default" (click)="updateUser(user, i)">Edit</button>
+      <a href="" class="btn btn-primary pull-right" [(routerLink)]=" '/user/' + user.id ">Detail</a>
     </div>
   </div>
 </div>
