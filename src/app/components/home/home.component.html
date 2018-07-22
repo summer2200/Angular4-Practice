@@ -1,4 +1,36 @@
 <p>
   <!-- home works! -->
-  {{users}}
+  <!-- {{users}} -->
 </p>
+<!-- <ul>
+	<li *ngFor="let item of items">{{item}}</li>
+</ul> -->
+<div class="container">
+  <form>
+    <div class="form-group">
+      <label>Name</label>
+      <input type="text" class="form-control" name="name" [(ngModel)]="user.name" />
+    </div>
+    <div>
+      <label>Email</label>
+      <input type="text" class="form-control" name="email" [(ngModel)]="user.email" />
+    </div>
+    <div>
+      <label>Phone</label>
+      <input type="text" class="form-control" name="phone" [(ngModel)]="user.phone" />
+    </div>
+    <button type="button" class="btn btn-success" (click)="saveUser()">Submit</button>
+  </form>
+  <hr>
+  <div *ngFor="let user of list; index as i">
+    <div class="well">
+      <ul class="list-group">
+        <li class="list-group-item">Name: {{user.name}}</li>
+        <li class="list-group-item">Email: {{user.email}}</li>
+        <li class="list-group-item">Phone: {{user.phone}}</li>
+      </ul>
+      <button class="btn btn-danger" (click)="deleteUser(user.id, i)">Delete</button>
+      <button class="btn btn-default" (click)="updateUser(user, i)">Edit</button>
+    </div>
+  </div>
+</div>
